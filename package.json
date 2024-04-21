@@ -1,0 +1,24 @@
+{
+  "name": "rules-engine-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index2.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:zen-engine": "node dist/zen-demo.js",
+    "start:json-rules-engine": "node dist/jre-demo.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@gorules/zen-engine": "^0.20.0",
+    "json-rules-engine": "^6.5.0"
+  }
+}

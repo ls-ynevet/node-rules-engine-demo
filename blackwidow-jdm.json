@@ -1,0 +1,98 @@
+{
+  "contentType": "application/vnd.gorules.decision",
+  "nodes": [
+    {
+      "name": "Fixture",
+      "id": "1ae735bb-f43f-48d5-90e7-e5ea98bf9de4",
+      "position": {
+        "x": 305,
+        "y": 205
+      },
+      "type": "inputNode"
+    },
+    {
+      "name": "IntervalDecision",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "id": "5e468b8d-7a4b-47ca-aa42-911de12ecf83",
+            "type": "expression",
+            "field": "totalDaysUntilDate",
+            "name": "TotalDaysUntilDate"
+          }
+        ],
+        "outputs": [
+          {
+            "field": "scanning.interval",
+            "id": "a22cefc6-97b4-4eab-b7bf-989a01a1ec7a",
+            "name": "Interval",
+            "type": "expression"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "6dee66c4-4c5d-4e4c-836f-d1a5914bafb3",
+            "5e468b8d-7a4b-47ca-aa42-911de12ecf83": "[1..10]",
+            "a22cefc6-97b4-4eab-b7bf-989a01a1ec7a": "30000"
+          },
+          {
+            "_id": "1a809f57-cb0a-4311-94c9-86c88382546a",
+            "5e468b8d-7a4b-47ca-aa42-911de12ecf83": "[10..20]",
+            "a22cefc6-97b4-4eab-b7bf-989a01a1ec7a": "60000"
+          },
+          {
+            "_id": "771418b5-4ab9-4c94-bb74-7cce98acbfc5",
+            "5e468b8d-7a4b-47ca-aa42-911de12ecf83": "",
+            "a22cefc6-97b4-4eab-b7bf-989a01a1ec7a": "120000"
+          }
+        ]
+      },
+      "id": "3fb0f2d9-d948-46ab-8f9a-22f7200a39f1",
+      "position": {
+        "x": 885,
+        "y": 180
+      },
+      "type": "decisionTableNode"
+    },
+    {
+      "name": "IntervalResponse",
+      "id": "4ac86b31-504e-4a28-9260-bb5b776b4b46",
+      "position": {
+        "x": 1120,
+        "y": 65
+      },
+      "type": "outputNode"
+    },
+    {
+      "name": "myFunction",
+      "content": "/**\n * @param input\n * @param {{\n *  dayjs: import('dayjs')\n *  Big: import('big.js').BigConstructor\n * }} helpers\n */\nconst handler = (input, { dayjs, Big }) => {\n  // Get the current date\n  const currentDate = dayjs();\n\n  // Specify the target date (30th April 2024)\n  const targetDate = dayjs(input.fixture.startDate);\n\n  // Calculate the difference in days\n  const totalDaysUntilDate = targetDate.diff(currentDate, 'day');\n  return { ...input, totalDaysUntilDate: totalDaysUntilDate };\n}",
+      "id": "b8426fcc-7b40-4e45-a8dc-22a09c483617",
+      "position": {
+        "x": 615,
+        "y": 220
+      },
+      "type": "functionNode"
+    }
+  ],
+  "edges": [
+    {
+      "id": "c1402bd5-3928-4eed-b736-d1f57dd0e256",
+      "sourceId": "3fb0f2d9-d948-46ab-8f9a-22f7200a39f1",
+      "type": "edge",
+      "targetId": "4ac86b31-504e-4a28-9260-bb5b776b4b46"
+    },
+    {
+      "id": "e030b65a-0eb0-4d32-b7b5-5e22e62a60c9",
+      "sourceId": "1ae735bb-f43f-48d5-90e7-e5ea98bf9de4",
+      "type": "edge",
+      "targetId": "b8426fcc-7b40-4e45-a8dc-22a09c483617"
+    },
+    {
+      "id": "56085fee-153d-4d93-9d8d-49d1b0d4eae7",
+      "sourceId": "b8426fcc-7b40-4e45-a8dc-22a09c483617",
+      "type": "edge",
+      "targetId": "3fb0f2d9-d948-46ab-8f9a-22f7200a39f1"
+    }
+  ]
+}
