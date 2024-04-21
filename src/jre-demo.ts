@@ -1,4 +1,5 @@
 import { Engine, RuleProperties } from "json-rules-engine";
+import fs from "fs/promises";
 
 // Function to calculate total days to the event start date
 function calculateTotalDays(eventStartDate) {
@@ -8,76 +9,12 @@ function calculateTotalDays(eventStartDate) {
   return totalDays;
 }
 
-// Define the rules
-const rules: RuleProperties[] = [
-  {
-    name: "Rule for totalDaysToStart between 0 and 10",
-    conditions: {
-      all: [
-        {
-          fact: "totalDaysToStart",
-          operator: "greaterThanInclusive",
-          value: 0,
-        },
-        {
-          fact: "totalDaysToStart",
-          operator: "lessThanInclusive",
-          value: 10,
-        },
-      ],
-    },
-    event: {
-      type: "setOutput",
-      params: {
-        output: 30000,
-      },
-    },
-  },
-  {
-    name: "Rule for totalDaysToStart between 10 and 20",
-    conditions: {
-      all: [
-        {
-          fact: "totalDaysToStart",
-          operator: "greaterThan",
-          value: 10,
-        },
-        {
-          fact: "totalDaysToStart",
-          operator: "lessThanInclusive",
-          value: 20,
-        },
-      ],
-    },
-    event: {
-      type: "setOutput",
-      params: {
-        output: 60000,
-      },
-    },
-  },
-  {
-    name: "Rule for totalDaysToStart 20 or higher",
-    conditions: {
-      all: [
-        {
-          fact: "totalDaysToStart",
-          operator: "greaterThanInclusive",
-          value: 20,
-        },
-      ],
-    },
-    event: {
-      type: "setOutput",
-      params: {
-        output: 120000,
-      },
-    },
-  },
-];
-
 // Create a new engine
-const engine = new Engine(rules);
+const fileData: string = await fs.readFile("./blackwidow-jre.json", "utf-8");
+const rulesSet: RuleProperties[] = JSON.parse(fileData);
+
+const engine = new Engine(rulesSet);
+
 const startTime = performance.now();
 // Sample event start date
 const eventStartDate = new Date("2024-05-15");
