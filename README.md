@@ -40,6 +40,47 @@ npm run start:zen-engine
 npm run start:json-rules-engine
 ```
 
+#### Zen Engine Demo
+
+To start the Zen Engine demo, run the following command:
+
+```bash
+npm run start:zen-engine
+```
+
+Example output:
+
+```bash
+{ performance: '928.25µs', result: { scanning: { interval: 120000 } } }
+```
+
+```bash
+{ performance: '963.875µs', result: { scanning: { interval: 120000 } } }
+```
+
+```bash
+{ performance: '880.375µs', result: { scanning: { interval: 120000 } } }
+```
+
+```bash
+{ performance: '919.708µs', result: { scanning: { interval: 120000 } } }
+```
+
+#### JSON Rules Engine Demo
+
+To start the JSON Rules Engine demo, run the following command:
+
+```bash
+npm run start:json-rules-engine
+```
+
+Example output:
+
+```bash
+120000
+Execution time: 1.2262500000000003 milliseconds
+```
+
 ## Project Structure
 
 - `src/`: Contains TypeScript source files.
