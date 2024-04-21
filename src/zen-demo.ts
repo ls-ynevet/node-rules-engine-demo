@@ -2,7 +2,7 @@ import { ZenEngine } from "@gorules/zen-engine";
 import fs from "fs/promises";
 
 const main = async () => {
-  const content = await fs.readFile("./blackwidow-jdm.json");
+  const content = await fs.readFile("./rulesets/blackwidow-jdm.json");
   const engine = new ZenEngine();
 
   const decision = engine.createDecision(content);

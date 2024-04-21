@@ -10,7 +10,7 @@ function calculateTotalDays(eventStartDate) {
 }
 
 // Create a new engine
-const fileData: string = await fs.readFile("./blackwidow-jre.json", "utf-8");
+const fileData: string = await fs.readFile("./rulesets/blackwidow-jre.json", "utf-8");
 const rulesSet: RuleProperties[] = JSON.parse(fileData);
 
 const engine = new Engine(rulesSet);
@@ -33,6 +33,6 @@ engine.run(fact).then((results) => {
   // Calculate execution time in milliseconds
   const executionTime = endTime - startTime;
 
-  results.events.map((event) => console.log(event.params.output)); // Output the interval
-  console.log("Execution time: " + executionTime + " milliseconds");
+  results.events.map((event) => console.log('scanning interval: ',event.params.output)); // Output the interval
+  console.log("performance: " + executionTime + " ms");
 });
