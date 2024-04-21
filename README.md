@@ -54,18 +54,6 @@ Example output:
 { performance: '928.25µs', result: { scanning: { interval: 120000 } } }
 ```
 
-```bash
-{ performance: '963.875µs', result: { scanning: { interval: 120000 } } }
-```
-
-```bash
-{ performance: '880.375µs', result: { scanning: { interval: 120000 } } }
-```
-
-```bash
-{ performance: '919.708µs', result: { scanning: { interval: 120000 } } }
-```
-
 #### JSON Rules Engine Demo
 
 To start the JSON Rules Engine demo, run the following command:
