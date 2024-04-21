@@ -9,6 +9,10 @@ function calculateTotalDays(eventStartDate) {
   return totalDays;
 }
 
+function addDays(days) {
+  return new Date(Date.now() + days * 24 * 60 * 60 * 1000);
+}
+
 // Create a new engine
 const fileData: string = await fs.readFile("./rulesets/blackwidow-jre.json", "utf-8");
 const rulesSet: RuleProperties[] = JSON.parse(fileData);
@@ -17,7 +21,7 @@ const engine = new Engine(rulesSet);
 
 const startTime = performance.now();
 // Sample event start date
-const eventStartDate = new Date("2024-05-15");
+const eventStartDate = addDays(10);
 
 // Calculate total days to event start date
 const totalDaysToStart = calculateTotalDays(eventStartDate);
