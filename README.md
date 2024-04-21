@@ -68,5 +68,3 @@ This project is licensed under the ISC License.
 Yair Nevet
 
 ---
-
-Feel free to customize this README with more detailed information or instructions specific to your project!
