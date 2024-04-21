@@ -44,7 +44,6 @@ npm run start:json-rules-engine
 
 - `src/`: Contains TypeScript source files.
 - `dist/`: Output directory for compiled JavaScript files.
-- `src/index2.js`: Main entry point of the application.
 
 ## Dependencies
 
