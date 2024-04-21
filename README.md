@@ -68,7 +68,7 @@ Example output:
 scanning interval:  30000
 performance: 1.382125000000002 ms
 ```
-## Decision Model Update
+## View & Update The Engines' rulesets
 #### Zen Engine
 Upload the JDM file `rulesets/blackwidow-jdm.json` into the ZEN Editor in order to visualize & update it: https://editor.gorules.io/
 
