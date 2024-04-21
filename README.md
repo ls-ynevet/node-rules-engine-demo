@@ -65,8 +65,8 @@ npm run start:json-rules-engine
 Example output:
 
 ```bash
-120000
-Execution time: 1.2262500000000003 milliseconds
+scanning interval:  30000
+performance: 1.382125000000002 ms
 ```
 
 ## Project Structure
