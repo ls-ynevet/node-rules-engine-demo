@@ -68,6 +68,10 @@ Example output:
 scanning interval:  30000
 performance: 1.382125000000002 ms
 ```
+
+
+#### Please note that in these demonstrations, the start date is randomly generated to be in the future, specifically from the current time onwards (NOW or later).
+
 ## View and amend the rulesets of the engines.
 #### Zen Engine
 Upload the JDM file `rulesets/blackwidow-jdm.json` into the ZEN Editor in order to visualize & update it: https://editor.gorules.io/
