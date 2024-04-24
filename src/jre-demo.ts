@@ -1,5 +1,6 @@
 import { Engine, RuleProperties } from "json-rules-engine";
 import fs from "fs/promises";
+import { addDaysFromNow } from "./common.js";
 
 // Function to calculate total days to the event start date
 function calculateTotalDays(eventStartDate) {
@@ -9,9 +10,6 @@ function calculateTotalDays(eventStartDate) {
   return totalDays;
 }
 
-function addDays(days) {
-  return new Date(Date.now() + days * 24 * 60 * 60 * 1000);
-}
 
 // Create a new engine
 const fileData: string = await fs.readFile(
@@ -24,7 +22,8 @@ const engine = new Engine(rulesSet);
 
 const startTime = performance.now();
 // Sample event start date
-const eventStartDate = addDays(10);
+const randomNumber = Math.floor(Math.random() * 31);
+const eventStartDate = addDaysFromNow(randomNumber);
 
 // Calculate total days to event start date
 const totalDaysToStart = calculateTotalDays(eventStartDate);
