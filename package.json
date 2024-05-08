@@ -5,7 +5,8 @@
   "main": "./src/index2.js",
   "type": "module",
   "scripts": {
-    "build": "tsc --watch",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:zen-engine": "node dist/zen-demo.js",
     "start:json-rules-engine": "node dist/jre-demo.js"
