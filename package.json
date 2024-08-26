@@ -19,7 +19,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@gorules/zen-engine": "^0.20.0",
+    "@gorules/zen-engine": "^0.27.0",
     "json-rules-engine": "^6.5.0"
   }
 }
