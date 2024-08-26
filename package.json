@@ -23,6 +23,6 @@
     "@black-widow/interfaces": "^3.88.0",
     "@gorules/zen-engine": "^0.20.0",
     "json-rules-engine": "^6.5.0",
-    "lodash": "^4.16.2"
+    "lodash": "^4.17.21"
   }
 }
