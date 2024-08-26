@@ -10,4 +10,4 @@ updates:
     registries:
       - npm-azure
     schedule:
-      interval: "weekly"
+      interval: "daily"
