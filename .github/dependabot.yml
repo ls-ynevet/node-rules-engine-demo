@@ -14,4 +14,4 @@ updates:
     registries:
       - azure-registry
     commit-message:
-      prefix: "chore/DAT-12960-deps-upgrade"
+      prefix: "chore/DAT-12960-deps-upgrade-"
