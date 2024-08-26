@@ -16,9 +16,11 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.12.7",
-    "typescript": "^5.4.5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
   },
   "dependencies": {
+    "@black-widow/interfaces": "^3.88.0",
     "@gorules/zen-engine": "^0.20.0",
     "json-rules-engine": "^6.5.0"
   }
