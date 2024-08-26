@@ -1,14 +1,17 @@
 version: 2
 registries:
-  npm-azure:
+  azure-registry:
     type: npm-registry
     url: https://pkgs.dev.azure.com/lsportsltd/37329a33-1106-43c2-9de4-83575243cd89/_packaging/BlackWidow/npm/registry/
-    user: "lsportsltd"
-    password: "${{secrets.AZURE_DEVOPS_NPM_TOKEN}}"
+    username: lsportsltd
+    password: ${{secrets.AZURE_DEVOPS_NPM_TOKEN}}
+
 updates:
   - package-ecosystem: "npm"
     directory: "/"
-    registries:
-      - npm-azure
     schedule:
       interval: "daily"
+    registries:
+      - azure-registry
+    commit-message:
+      prefix: "chore/DAT-12960-deps-upgrade"
