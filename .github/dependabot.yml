@@ -5,6 +5,7 @@ registries:
     url: https://pkgs.dev.azure.com/lsportsltd/37329a33-1106-43c2-9de4-83575243cd89/_packaging/BlackWidow/npm/registry/
     username: lsportsltd
     password: ${{secrets.AZURE_DEVOPS_NPM_TOKEN}}
+    always-auth: true
 
 updates:
   - package-ecosystem: "npm"
